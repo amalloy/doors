@@ -69,37 +69,3 @@
 
 (defn see-person [person ])
 
-;; $ ./Build/doors 345 0
-;; #1;yellow;1;1;1
-;; The door number 2 is a trap.
-;; Inverted: The door number 2 is safe to enter.
-;; #2;green;1;0;1
-;; Either all the doors tell truth, or they all are lying.
-;; Inverted: Some of the doors tell truth, some are lying.
-(run 1 [x]
-  (fresh [door1 door2
-          sign1 sign2]
-    (fresh [door]
-      (trapo door false)
-      (conde [(== door door1)]
-             [(== door door2)])
-      (door-idxo door x))
-
-    (conde [(trapo door1 false)]
-           [(trapo door2 false)])
-
-    (see-door 1 'yellow door1)
-    (see-door 2 'green door2)
-    (connecto door1 sign1)
-    (connecto door2 sign2)
-    (see-sign sign1 1
-              (trapo door2 true)
-              (trapo door2 false))
-    (see-sign sign2 2
-              (fresh [all-true?]
-                (sign-honesto sign1 all-true?)
-                (sign-honesto sign2 all-true?))
-              (all (conde [(sign-honesto sign1 true)]
-                          [(sign-honesto sign2 true)])
-                   (conde [(sign-honesto sign1 false)]
-                          [(sign-honesto sign2 false)])))))
