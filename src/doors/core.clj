@@ -54,7 +54,7 @@
 
 (defn raceo [race person]
   (fresh [h n f i]
-    (persono h race f i person)))
+    (persono h n race f i person)))
 
 (defn vampireo [person]
   (person-honesto false person)
@@ -67,5 +67,9 @@
 (defn humano [person]
   (raceo 'human person))
 
-(defn see-person [person ])
-
+(defn see-person [person idx fat? race]
+  (fresh [honest? hidden? r]
+    (== hidden? (= race 'incognito))
+    (conde [(== hidden? false) (== r race)]
+           [s#]) ;; don't fail the computation if the first clause fails
+    (persono honest? idx r fat? hidden? person)))
