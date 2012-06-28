@@ -1,15 +1,13 @@
 # doors
 
-I'm an app. Or maybe I'm a library? I haven't decided yet. 
-
-The choice is up to you!
+A core.logic solver for [Labyrinth puzzles](http://rooms.jmpup.com).
 
 ## Usage
 
-FIXME
+TBD - there's no parser yet.
 
 ## License
 
-Copyright © 2012 FIXME
+Copyright © 2012 Alan Malloy
 
 Distributed under the Eclipse Public License, the same as Clojure.
