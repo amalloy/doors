@@ -1,3 +1,4 @@
+;; http://rooms.jmpup.com/room.php?seed=345&level=0&rcnt=0&rank=0
 ;; $ ./Build/doors 345 0
 ;; #1;yellow;1;1;1
 ;; The door number 2 is a trap.
